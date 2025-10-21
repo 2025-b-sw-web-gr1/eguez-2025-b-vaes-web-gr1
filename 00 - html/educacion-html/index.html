@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conceptos Básicos de HTML - Ejemplos Educativos</title>
     <style>
+        .boton-ejemplo {
+            background-color: blue;
+            color:red;
+        }
+        .boton-ejemplo {
+            background-color: red;
+        }
+        .boton-ejemplo {
+            background-color: yellow;
+        }
         body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
         header { background: #0074D9; color: #fff; padding: 1rem; text-align: center; }
         main { max-width: 900px; margin: 2rem auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px #0001; }
@@ -16,10 +26,25 @@
 </head>
 <body>
     <header>
-        <h1>Conceptos Básicos de HTML</h1>
+        <h1 style="color:black;">Conceptos Básicos de HTML</h1>
         <p>Ejemplos educativos basados en W3Schools</p>
     </header>
     <main>
+
+    <button id="botoncito" 
+            class="boton-ejemplo"
+    >
+        AQUI EL BOTON
+    </button>
+
+    <button
+    >
+        Boton 2
+    </button>
+    <button class="boton-secundario"
+    >
+        Boton 3
+    </button>
         <section>
             <h2>¿Qué es HTML?</h2>
             <p>HTML es el lenguaje estándar para crear páginas web. Significa <strong>HyperText Markup Language</strong>.</p>
@@ -117,4 +142,62 @@
         </section>
     </main>
 </body>
+    <style>
+        
+        .boton-ejemplo {
+            background-color: orange;
+        }
+        button {
+                background-color: coral;
+                padding: 4px;
+                margin: 2px;
+                border-radius: 10px;
+                cursor: pointer;
+        }
+        button:hover {
+                background-color: rgb(157, 78, 49);
+        }
+        .boton-ejemplo {
+            background-color: green;
+        }
+        .boton-ejemplo:hover {
+            background-color: greenyellow;
+            animation-name: botonEjemploAnimacion;
+            animation-duration: 4s;
+        }
+        
+        .boton-secundario {
+            background-color: rgb(219, 219, 219);
+        }
+        .boton-secundario:hover {
+            background-color: black;
+            color: white;
+            animation-name: botonSecundarioAnimacion;
+            animation-duration: 4s;
+        }
+        @keyframes botonEjemploAnimacion {
+            from {background-color: green;}
+            to {background-color: greenyellow;}
+        }
+        @keyframes botonSecundarioAnimacion {
+            0%   {
+                background-color: rgb(219, 219, 219);
+                color: black;
+            }
+            25%  {background-color: rgb(149, 149, 149);}
+            50%  {background-color: rgb(65, 65, 65);}
+            100% {
+                background-color: black;
+                color: white;
+            }
+        }
+        /* 
+        !important
+        style
+        id
+        class
+        tag
+
+        */
+    </style>
 </html>

@@ -1,0 +1,16 @@
+/* external.css - Hoja de estilos externa
+   Recomendada para proyectos: separa estilos del HTML, permite caché y reutilización.
+*/
+
+body { background: #f1f6f5; color: #0b2a2a; }
+header { background: linear-gradient(90deg,#2B7A78,#2E8B57); color: #fff; padding: 1rem; border-radius: 6px; }
+main { margin-top: 1rem; }
+.demo-target { padding: 0.75rem; background: #ffffff; border-radius: 6px; border: 1px solid #e6f0ef; }
+
+/* Una regla adicional para demostrar especificidad */
+.demo-target p { color: #2B7A78; font-weight: 600; }
+
+.note { font-size: 0.95rem; color: #333; }
+.boton-ejemplo{
+        background-color: blue;
+    }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formas de Cargar CSS - Educativo</title>
+  <!-- Ejemplo 1: Internal CSS (etiqueta <style>) -->
+  <!-- Ejemplo 3: @import (desde una hoja externa) -->
+  <link rel="stylesheet" href="css/imported.css">
+  <!-- Ejemplo 4: preload (priorizar carga de CSS) -->
+  <!-- Ejemplo 2: External CSS (archivo enlazado) -->
+  <link rel="stylesheet" href="css/external.css">
+  
+  <style>
+    /* Internal stylesheet: se aplica a esta página */
+    body { font-family: Arial, sans-serif; background: #fff; color: #222; margin: 0; padding: 1rem; }
+    header { background: #2B7A78; color: white; padding: 1rem; border-radius: 6px; }
+    section { margin-top: 1rem; padding: 1rem; border: 1px solid #eee; border-radius: 6px; }
+    .inline-example { background: #f7f7f7; padding: 0.5rem; border-radius: 4px; }
+    .external { border-left: 6px solid #2B7A78; }
+    .boton-ejemplo{
+        background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Formas de Cargar CSS en una Página Web</h1>
+    <p>Pequeño proyecto educativo con ejemplos: inline, internal, external, @import, preload y dinámico.</p>
+  </header>
+
+  <main>
+    <button class="boton-ejemplo">Ejemplo boton</button>
+    <section>
+      <h2>1) Estilos Inline (atributo style)</h2>
+      <p class="inline-example" style="color: #d9480f; background: #fff7ee; padding: 0.5rem;">Este párrafo usa el atributo <code>style</code> directamente en la etiqueta.</p>
+      <p>Uso: útil para reglas puntuales y cuando se necesita prioridad inmediata. Desventaja: difícil de mantener y no reutilizable.</p>
+    </section>
+
+    <section>
+      <h2>2) Internal CSS (etiqueta &lt;style&gt; en la cabecera)</h2>
+      <p>Las reglas dentro de la etiqueta <code>&lt;style&gt;</code> se aplican a todo el documento. Buen uso para pequeñas páginas o ejemplos educativos.</p>
+      <pre>&lt;style&gt; body { background: #fff } &lt;/style&gt;</pre>
+    </section>
+
+    <section class="external">
+      <h2>3) External CSS (archivo .css enlazado con &lt;link&gt;)</h2>
+      <p>Este ejemplo carga <code>css/external.css</code> mediante un enlace. Es la forma recomendada para proyectos medianos y grandes.</p>
+      <p class="note">Ventajas: caché del navegador, separación de preocupaciones, fácil mantenimiento.</p>
+    </section>
+
+    <section>
+      <h2>4) @import (dentro de CSS)</h2>
+      <p>La regla <code>@import</code> permite importar otra hoja de estilos desde un archivo CSS. Puede afectar el rendimiento si se usa en cabeceras ya que bloquea.</p>
+      <pre>/* dentro de una hoja CSS */
+@import url("imported.css");
+</pre>
+    </section>
+
+    <section>
+      <h2>5) preload para priorizar CSS</h2>
+      <p>Usa <code>&lt;link rel="preload" as="style" href="..." onload="this.rel='stylesheet'"&gt;</code> para pedir al navegador que descargue antes una hoja de estilos sin bloquear el resto del parsing.</p>
+    </section>
+
+    <section>
+      <h2>6) Carga dinámica con JavaScript</h2>
+      <p>Puedes inyectar un elemento <code>&lt;link&gt;</code> o usar <code>fetch</code> y <code>Blob</code> para aplicar estilos en tiempo de ejecución.</p>
+      <button id="load-link">Cargar CSS vía &lt;link&gt; dinámico</button>
+      <button id="load-fetch">Cargar CSS vía fetch + Blob</button>
+      <div id="dynamic-result" style="margin-top:0.5rem;">Estado: pendiente</div>
+    </section>
+
+    <section>
+      <h2>7) Shadow DOM (estilos encapsulados)</h2>
+      <p>El Shadow DOM permite estilos encapsulados por componente. El siguiente ejemplo crea un elemento con estilos propios que no afectan al resto del documento.</p>
+      <div id="shadow-root-host"></div>
+    </section>
+
+    <section>
+      <h2>8) Estilos en línea en contenido remoto (CSP y peticiones HTTP)</h2>
+      <p>Cuando cargas CSS desde el servidor via HTTP (una petición), puedes usar las mismas técnicas: <code>&lt;link href="/styles.css"&gt;</code>, <code>@import</code> o fetch. Si usas Content Security Policy (CSP), algunas de estas técnicas (como inline) pueden requerir 'unsafe-inline' o hashes.</p>
+    </section>
+
+    <section>
+      <h2>9) Demo visual</h2>
+      <p class="demo-target">Este párrafo muestra estilos aplicados desde la hoja externa.</p>
+    </section>
+
+  </main>
+
+  <script src="js/dynamic-load.js"></script>
+  <script>
+    // Shadow DOM demo rápido
+    (function(){
+      const host = document.getElementById('shadow-root-host');
+      const shadow = host.attachShadow({mode:'open'});
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = `<style>p{color:purple;background:#fff0ff;padding:0.5rem;border-radius:4px;}</style><p>Parrafo dentro del Shadow DOM (estilos encapsulados)</p>`;
+      shadow.appendChild(wrapper);
+    })();
+  </script>
+</body>
+</html>

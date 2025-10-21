@@ -1,0 +1,12 @@
+/* imported.css - Ejemplo de hoja importada con @import
+   Normalmente se importa desde otra hoja CSS. Aquí la incluimos directamente para demo.
+*/
+
+/* Estilos que se aplican cuando imported.css se carga */
+.imported-note { background: #fffbe6; border-left: 4px solid #ffd166; padding: 0.5rem; border-radius: 4px; }
+
+/* @import example (comentado porque en este demo ya se carga como link): */
+/* @import url('other.css'); */
+.boton-ejemplo{
+        background-color: red;
+    }

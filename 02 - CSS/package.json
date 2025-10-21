@@ -1,0 +1,11 @@
+{
+  "name": "02-css-formas-de-carga",
+  "version": "1.0.0",
+  "description": "Proyecto educativo que demuestra varias formas de cargar CSS en una página web.",
+  "scripts": {
+    "start": "npx http-server -c-1 . -p 8080"
+  },
+  "author": "eguez-2025",
+  "license": "MIT",
+  "devDependencies": {}
+}

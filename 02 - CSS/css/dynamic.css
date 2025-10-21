@@ -1,0 +1,5 @@
+/* dynamic.css - cargada dinámicamente por JavaScript */
+.dynamic-applied { background: #eef9ff; border: 1px dashed #4aa3ff; padding: 0.6rem; border-radius: 4px; color: #0b61a4; }
+.boton-ejemplo{
+        background-color: green;
+    }
