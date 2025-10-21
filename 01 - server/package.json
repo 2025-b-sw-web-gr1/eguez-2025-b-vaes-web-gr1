@@ -1,0 +1,24 @@
+{
+  "name": "eguez-2025-b-vaes-web-gr1",
+  "version": "1.0.0",
+  "description": "Vicente Adrian Eguez Sarzosa vaes\r Hola mundo!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2025-b-sw-web-gr1/eguez-2025-b-vaes-web-gr1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2025-b-sw-web-gr1/eguez-2025-b-vaes-web-gr1/issues"
+  },
+  "homepage": "https://github.com/2025-b-sw-web-gr1/eguez-2025-b-vaes-web-gr1#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,13 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 2rem;
+}
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: blue;
+}
+img {
+  max-width: 400px;
+}
